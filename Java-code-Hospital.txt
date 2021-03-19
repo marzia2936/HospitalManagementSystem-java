@@ -1,0 +1,73 @@
+//Doctor Class
+
+package hospitalmanagementsystem;
+
+
+public class Doctor {
+    double salary;
+    String performance;
+  
+    void checking_report(Report r1){
+     
+        if(r1.category=="Noraml" && r1.location=="Green"){
+            System.out.println("Forwarded to Hospital");
+        }   
+        else if(r1.category=="Advanced" && r1.location=="Better"){
+            System.out.println("Stay Here");
+            
+        }
+        else{
+            System.out.println("You are Good");
+        }
+                
+       }
+    Doctor(String performance1){
+        performance=performance1;
+    }
+}
+
+//Report Class
+
+package hospitalmanagementsystem;
+
+public class Report {
+    String category;
+    String location;
+    String status;
+    Report(String item, String location1){
+        category=item;
+        location=location1;
+        
+    }
+    
+}
+//Admin Class
+
+package hospitalmanagementsystem;
+
+public class Admin {
+    void giving_salary(Doctor d1){
+         if(d1.performance=="Good"){
+            System.out.println("Doctor will get salary");
+        }   
+    }
+}
+//Main Class
+
+package hospitalmanagementsystem;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Doctor d1 = new Doctor("Good");
+        
+        Report r1 = new Report("Noraml","Green");
+        
+        d1.checking_report(r1);
+        
+        Admin a1= new Admin();
+        
+        a1.giving_salary(d1);
+    }
+    
+}
